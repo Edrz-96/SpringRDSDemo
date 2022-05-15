@@ -28,7 +28,12 @@ public class CarMappedService {
 
 	// create
 	public CarDTO create(Car car) {
-		return this.mapToDTO(this.repo.save(car));
+
+		if (car.getGarage().getCapacity() >= car.getGarage().getCarsInGarage().size()-1) {
+			return this.mapToDTO(this.repo.save(car));
+		} else {
+			throw new IndexOutOfBoundsException("Garage capacity full");
+		}
 	}
 
 	// read

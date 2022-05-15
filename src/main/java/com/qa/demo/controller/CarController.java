@@ -21,8 +21,9 @@ import com.qa.demo.service.CarMappedService;
 
 @RestController
 @RequestMapping("/car")
-// /CarDTO/create 
+
 public class CarController {
+	
 	// create - @PostMapping - 201 created
 	// read - @GetMapping - 200 ok
 	// update - @PutMapping - 202 accepted

@@ -20,10 +20,8 @@ import com.qa.demo.exceptions.GarageException;
 import com.qa.demo.service.GarageService;
 
 @RestController
-@RequestMapping("/Garage")
-// /GarageDTO/create 
+@RequestMapping("/garage")
 public class GarageController {
-
 
 	private GarageService service;
 
@@ -31,7 +29,6 @@ public class GarageController {
 	public GarageController(GarageService service) {
 		this.service = service;
 	}
-
 
 	@PostMapping("/create")
 	public ResponseEntity<GarageDTO> create(@RequestBody Garage Garage) {

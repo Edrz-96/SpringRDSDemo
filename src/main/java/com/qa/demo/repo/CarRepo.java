@@ -11,7 +11,7 @@ import com.qa.demo.dao.Car;
 @Repository
 public interface CarRepo extends JpaRepository<Car, Long> {
 
-	// implement additonal queries
+
 	
 	@Query(value = "SELECT * from Car WHERE engine = ?1", nativeQuery = true)
 	List<Car> findByEngine(String str); 

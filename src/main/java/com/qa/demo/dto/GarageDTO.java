@@ -10,7 +10,6 @@ import com.qa.demo.dao.Car;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity
 @Data
 @NoArgsConstructor
 public class GarageDTO {
@@ -18,9 +17,9 @@ public class GarageDTO {
 	Long id;
 
 	String location;
-
-	List<Car> carsInGarage = new ArrayList<>(500);
-
+	
 	int capacity;
+
+	List<Car> carsInGarage = new ArrayList<>(capacity);
 
 }

@@ -22,13 +22,19 @@ public class GarageService {
 		this.map = map;
 	}
 
-	private GarageDTO mapToDTO(Garage Garage) {
-		return this.map.map(Garage, GarageDTO.class);
+	private GarageDTO mapToDTO(Garage garage) {
+		return this.map.map(garage, GarageDTO.class);
 	}
 
 	// create
-	public GarageDTO create(Garage Garage) {
-		return this.mapToDTO(this.repo.save(Garage));
+	public GarageDTO create(Garage garage) {
+		return this.mapToDTO(this.repo.save(garage));
+		// logic // 
+		// as a car is created the service should check the backend so that the capacity
+		// limitation matches the arraylist size,
+		// given java hasn't got that sort of implementation bar
+		// Collections.unmodifiableCollection(list);
+
 	}
 
 	// read

@@ -8,17 +8,15 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 
-import org.springframework.context.annotation.Scope;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @Entity
 @Data
 @NoArgsConstructor
-@Scope("prototype")
+//@JsonIgnoreProperties("garage")
 public class Car {
 
 	@Id
@@ -32,11 +30,12 @@ public class Car {
 
 	@Column(name = "engine", length = 30)
 	String engineSize;
-	{ wheel = 4; }; 
-	
-	
-	@ManyToOne
-	@NotNull
+
+	@ManyToOne(targetEntity = Garage.class)
+	@JsonBackReference
 	private Garage garage;
 
+	{
+		wheel = 4;
+	};
 }

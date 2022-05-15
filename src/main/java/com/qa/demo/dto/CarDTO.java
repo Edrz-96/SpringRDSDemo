@@ -12,6 +12,8 @@ public class CarDTO {
 	int door;
 
 	String engineSize;
-
+	
 	Garage garage;
+	
+
 }
